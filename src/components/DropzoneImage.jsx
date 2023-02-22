@@ -17,16 +17,17 @@ function Dropzone({ onDrop, accept, open }) {
   ))
 
   return (
-    <div className={`p-4 flex w-[300px] flex-col items-center justify-center border-2 border-emerald-600 border-dashed ${isDragActive && 'bg-cyan-100' }`}>
+    <div
+      className={`flex w-[300px] flex-col items-center justify-center border-2 border-dashed border-emerald-600 p-4 ${
+        isDragActive && 'bg-cyan-100'
+      }`}
+    >
       <div {...getRootProps()}>
-        <input
-          className="input-zonebg-gray-50 block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-          {...getInputProps()}
-        />
-        <div>
+        <input {...getInputProps()} />
+        <div className="text-center">
           <p>Drag’ n’ drop some files here, or click to select files</p>
 
-          <button type="button" onClick={open} className="btn btn-primary">
+          <button type="button" onClick={open} className="btn-primary btn">
             Click to select files
           </button>
         </div>
@@ -43,7 +44,8 @@ function DropzoneImage() {
   const onDrop = useCallback(acceptedFiles => {
     acceptedFiles.map(file => {
       const reader = new FileReader()
-
+      
+      reader.readAsDataURL(file)      
       reader.onload = e => {
         setImages(prevState => [
           ...prevState,
@@ -51,7 +53,6 @@ function DropzoneImage() {
         ])
       }
 
-      reader.readAsDataURL(file)
       return file
     })
   }, [])
