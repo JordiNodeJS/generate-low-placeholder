@@ -1,4 +1,5 @@
 import SvgComponent from './components/Cloudinary'
+import DropZone from './components/DropZone'
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
           Remove<span className='text-blue-600'>bg</span>
         </h1>
       </header>
-      <main></main>
+      <main>
+        <DropZone className="bg-purple-800 p-20" />
+      </main>
       <footer className="flex items-center justify-center gap-x-2 font-semibold">
         Made with <SvgComponent className="w-24" />
       </footer>
