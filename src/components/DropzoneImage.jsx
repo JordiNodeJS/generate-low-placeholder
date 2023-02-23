@@ -1,12 +1,12 @@
+// DropzoneImage.jsx
 import { useState, useCallback } from 'react'
 import { createId } from '@paralleldrive/cuid2'
 import { useDropzone } from 'React-dropzone'
 import ImageList from './ImageList'
 
-function Dropzone({ onDrop, accept, open }) {
+function Dropzone({ onDrop, open }) {
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
-      accept,
       onDrop
     })
 
@@ -45,21 +45,21 @@ function DropzoneImage() {
     acceptedFiles.map(file => {
       const reader = new FileReader()
 
-      reader.readAsDataURL(file)
+      reader.readAsDataURL(file) // result of this method is caught by event.target.result
       reader.addEventListener('load', event => {
         setImages(prevState => [
           ...prevState,
           { id: createId(), src: event.target.result }
         ])
       })
-
+      
       return file
     })
   }, [])
-
+  
   return (
     <div>
-      <Dropzone onDrop={onDrop} accept="image/*" />
+      <Dropzone onDrop={onDrop} />
       <ImageList images={images} />
     </div>
   )

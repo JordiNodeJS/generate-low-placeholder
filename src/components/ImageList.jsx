@@ -4,7 +4,7 @@ const ImageList = ({ images }) => {
   return (
     <section className="w-12">
       {images.map(image => (
-        <Image image={image} key={`${image.id}-image`} />
+        <Image image={image} key={`image-${image.id}`} />
       ))}
     </section>
   )
