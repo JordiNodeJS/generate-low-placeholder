@@ -44,14 +44,14 @@ function DropzoneImage() {
   const onDrop = useCallback(acceptedFiles => {
     acceptedFiles.map(file => {
       const reader = new FileReader()
-      
-      reader.readAsDataURL(file)      
-      reader.onload = e => {
+
+      reader.readAsDataURL(file)
+      reader.addEventListener('load', event => {
         setImages(prevState => [
           ...prevState,
-          { id: createId(), src: e.target.result }
+          { id: createId(), src: event.target.result }
         ])
-      }
+      })
 
       return file
     })
