@@ -1,5 +1,6 @@
+import CloudinaryUploadWidget from './components/CloudinaryUploadWidget'
 import SvgComponent from './components/Cloudinary'
-import DropzoneImage from './components/DropzoneImage'
+// import DropzoneImage from './components/DropzoneImage'
 import TestReducer from './components/TestReducer'
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       </header>
       <main>
         <h1 className="text-center">Drag and Drop Test</h1>
-        <DropzoneImage />
+      <CloudinaryUploadWidget />
+        {/* <DropzoneImage /> */}
       </main>
       <footer className="flex items-center justify-center font-semibold gap-x-2">
         Made with <SvgComponent className="w-24" />

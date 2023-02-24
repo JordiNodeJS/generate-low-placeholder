@@ -1,6 +1,13 @@
-import Image from './Image'
+const Image = ({ image }) => {
+  return (
+    <div>
+      <img alt={`img - ${image.id}`} src={image.src} />
+    </div>
+  )
+}
 
-const ImageList = ({ images }) => {
+
+function ImageList({ images }) {
   return (
     <section className="w-12">
       {images.map(image => (

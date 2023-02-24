@@ -7,7 +7,12 @@ import ImageList from './ImageList'
 function Dropzone({ onDrop, open }) {
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
-      onDrop
+      maxFiles:2,
+      onDrop,
+      accept: {
+        'image/jpeg': [],
+        'image/png': []
+      },
     })
 
   const files = acceptedFiles.map(file => (
