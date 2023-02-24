@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import { AdvancedImage } from '@cloudinary/react'
+import { AdvancedImage, lazyload, accessibility, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { useDropzone } from 'react-dropzone'
+
+import {sepia} from "@cloudinary/url-gen/actions/effect";
 
 const CloudinaryUploadWidget = () => {
   const [image, setImage] = useState({ secure_url: '' })
   const [isUploading, setIsUploading] = useState(false)
   const [publicId, setPublicId] = useState('')
-  const [data, setData] = useState(null)
+  const [, setData] = useState(null)
 
   const cloudinary = new Cloudinary({
     cloud: {
@@ -46,13 +48,17 @@ const CloudinaryUploadWidget = () => {
     onDrop: handleDrop
   })
 
+  const myImgProcessed = cloudinary.image(publicId, {
+    crop: 'fill',
+    width: 300,
+    height: 300
+  }).effect(sepia()) 
+
   return (
     <div>
-      {' '}
-      {/* reemplaza por tu cloud name */}
       <div
         {...getRootProps()}
-        className={`flex w-[300px] flex-col items-center justify-center border-2 border-dashed border-emerald-600 p-4 ${
+        className={`flex w-full flex-col items-center justify-center border-2 border-dashed border-emerald-600 p-4 ${
           isDragActive && 'bg-cyan-100'
         }`}
       >
@@ -61,16 +67,9 @@ const CloudinaryUploadWidget = () => {
 
         {image ? (
          <AdvancedImage
-         cldImg={cloudinary.image(publicId, {
-           crop: 'fill',
-           width: 300,
-           height: 300
-         })}
+         cldImg={myImgProcessed}  plugins={[lazyload(), responsive(), accessibility(), placeholder()]}
        />
         ) : (
-          // <AdvancedImage cldImg={`v${version}/${folder}/${publicId}`} />
-
-          // <img src={cloudinary.image(image)} />
           <p>Arrastra una imagen aquí o haz clic para seleccionarla.</p>
         )}
       </div>
