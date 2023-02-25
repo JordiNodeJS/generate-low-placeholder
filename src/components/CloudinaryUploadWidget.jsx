@@ -14,7 +14,7 @@ import { replaceColor } from '@cloudinary/url-gen/actions/adjust'
 
 const CloudinaryUploadWidget = () => {
   const [isUploading, setIsUploading] = useState(false)
-  const [publicId, setPublicId] = useState('')
+  const [publicId, setPublicId] = useState(null)
   const [, setData] = useState(null)
 
   const cld = new Cloudinary({
