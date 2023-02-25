@@ -11,6 +11,7 @@ import {
 import { Cloudinary } from '@cloudinary/url-gen'
 import { vectorize } from '@cloudinary/url-gen/actions/effect'
 import { replaceColor } from '@cloudinary/url-gen/actions/adjust'
+import Spinner from './Spinner'
 
 const CloudinaryUploadWidget = () => {
   const [isUploading, setIsUploading] = useState(false)
@@ -56,7 +57,7 @@ const CloudinaryUploadWidget = () => {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     noClick: false,
-    maxFiles: 2,
+    maxFiles: 1,
     accept: { 'image/*': [] },
     onDrop: handleDrop
   })
@@ -76,7 +77,12 @@ const CloudinaryUploadWidget = () => {
     >
       <div {...getRootProps()}>
         <input {...getInputProps()} />
-        {isUploading && <p>Subiendo imagen...</p>}
+        {isUploading && (
+          <div className="flex items-center mb-3">
+            <Spinner />
+            Preparing your photo
+          </div>
+        )}
         <button className="btn-primary btn" type="button">
           Upload Image
         </button>
