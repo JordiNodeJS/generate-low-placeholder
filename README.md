@@ -26,7 +26,7 @@ En este caso, `reader.readAsDataURL(file)` lee el contenido del archivo y devuel
 
 El resultado de `reader.readAsDataURL(file)` es accedido a través de la propiedad e.target.result en el evento onload del objeto `FileReader`.
 
-# Creating a low quality image placeholder
+# Generate low quality image placeholders
 
 Instead, an SVG LQIP can be used while lazy loading the full-sized image.
 
