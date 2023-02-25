@@ -8,15 +8,15 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: '#1637c9',
-          secondary: '#2f378c',
-          accent: '#ed78c8',
-          neutral: '#191D24',
-          'base-100': '#41365E',
-          info: '#84C7DB',
-          success: '#186D41',
-          warning: '#CA9A16',
-          error: '#ED1216'
+          primary: '#7e22ce',
+          secondary: '#db2777',
+          accent: '#854d0e',
+          neutral: '#222B30',
+          'base-100': '#FAF9FA',
+          info: '#0ea5e9',
+          success: '#14b8a6',
+          warning: '#facc15',
+          error: '#f43f5e'
         }
       }
     ]

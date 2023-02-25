@@ -18,7 +18,6 @@
   },
   "plugins": ["react"],
   "rules": {
-    "indent": "off",
     "no-console": "warn",
     "react/prop-types": "off",
     "react/self-closing-comp": "warn",
