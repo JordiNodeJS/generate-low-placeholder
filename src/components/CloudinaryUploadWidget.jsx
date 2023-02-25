@@ -10,7 +10,6 @@ import {
 } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { vectorize } from '@cloudinary/url-gen/actions/effect'
-
 import { replaceColor } from '@cloudinary/url-gen/actions/adjust'
 
 const CloudinaryUploadWidget = () => {
