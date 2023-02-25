@@ -25,3 +25,9 @@ La función readAsDataURL se utiliza para leer el contenido de un archivo y conv
 En este caso, `reader.readAsDataURL(file)` lee el contenido del archivo y devuelve una cadena base64 que representa el contenido del archivo. Luego, esa cadena se utiliza para establecer la fuente de la imagen que se muestra en la página web.
 
 El resultado de `reader.readAsDataURL(file)` es accedido a través de la propiedad e.target.result en el evento onload del objeto `FileReader`.
+
+# Creating a low quality image placeholder
+
+Instead, an SVG LQIP can be used while lazy loading the full-sized image.
+
+The placeholder should still represent the subject matter of the original but also be very compact. Confining the SVG to 2 colors and a detail level of 5% produces an easily identifiable image with a file size of just 6 KB.

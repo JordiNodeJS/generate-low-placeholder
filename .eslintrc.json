@@ -3,7 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard", "plugin:react/jsx-runtime"],
+  "extends": [
+    "prettier",
+    "plugin:react/recommended",
+    "standard",
+    "plugin:react/jsx-runtime"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,21 +18,30 @@
   },
   "plugins": ["react"],
   "rules": {
+    "indent": "off",
     "no-console": "warn",
     "react/prop-types": "off",
     "react/self-closing-comp": "warn",
     "arrow-parens": ["error", "as-needed"],
+    "multiline-ternary": ["error", "never"],
     "space-before-function-paren": [
       "error",
       {
-        "props": true,
-        "ignorePropertyModificationsFor": ["state", "draft"],
-        "allowTernary": true,
-        "allowShortCircuit": true,
         "anonymous": "always",
         "named": "never",
         "asyncArrow": "always"
       }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state", "draft"]
+      }
+    ],
+    "no-unused-expressions": [
+      "error",
+      { "allowTernary": true, "allowShortCircuit": true }
     ]
   },
   "settings": {
