@@ -5,5 +5,5 @@
     "tabWidth": 2,
     "arrowParens": "avoid",
     "pluginSearchDirs": ["./node_modules/prettier-plugin-tailwindcss"],
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": ["prettier-plugin-tailwindcss", "prettier"]
 }
