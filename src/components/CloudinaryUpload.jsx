@@ -8,24 +8,18 @@ import {
   responsive,
   placeholder
 } from '@cloudinary/react'
-import { Cloudinary } from '@cloudinary/url-gen'
-import { vectorize } from '@cloudinary/url-gen/actions/effect'
-import { replaceColor } from '@cloudinary/url-gen/actions/adjust'
 import Spinner from './Spinner'
+import {
+  cld,
+  imgOriginal,
+  imgBackground,
+  imgReadyToDownload
+} from '../utils/transformations'
 
-const CloudinaryUploadWidget = () => {
+const CloudinaryUpload = () => {
   const [isUploading, setIsUploading] = useState(false)
   const [publicId, setPublicId] = useState(null)
   const [, setData] = useState(null)
-
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: import.meta.env.VITE_CLOUDNAME
-    },
-    url: {
-      secure: true // force https, set to false to force http
-    }
-  })
 
   const handleDrop = async acceptedFiles => {
     setIsUploading(true)
@@ -33,7 +27,7 @@ const CloudinaryUploadWidget = () => {
     const formData = new FormData()
     formData.append('file', file)
     formData.append('upload_preset', import.meta.env.VITE_UPLOAD_PRESET)
-    formData.append('api_key', import.meta.env.VITE_API_KEY)
+    // formData.append('api_key', import.meta.env.VITE_API_KEY)
     formData.append('timestamp', Date.now() / 1000)
     try {
       const response = await fetch(
@@ -62,36 +56,36 @@ const CloudinaryUploadWidget = () => {
     onDrop: handleDrop
   })
 
-  const imgNotProcessed = cld.image(publicId)
-
-  const myImgProcessed = cld
-    .image(publicId)
-    .adjust(replaceColor('maroon').fromColor('#2b38aa').tolerance(80))
-    .effect(vectorize().numOfColors(4).detailsLevel(0.25))
-
   return (
     <div
-      className={`flex w-full flex-col items-center justify-center border-2 border-dashed border-emerald-600 p-4 ${
+      className={`flex w-full flex-col items-center justify-center shadow-lg drop-shadow-lg shadow-pink-100 bg-pink-50 p-4 ${
         isDragActive && 'bg-cyan-100'
       }`}
     >
-      <div {...getRootProps()}>
+      <div
+        {...getRootProps({
+          className: `flex flex-col w-full items-center justify-center border-2 border-dashed border-violet-200 p-4 mb-4 ${
+            isDragActive && 'bg-cyan-100'
+          }`
+        })}
+      >
         <input {...getInputProps()} />
         {isUploading && (
-          <div className="flex items-center mb-3">
+          <div className="mb-3 flex items-center">
             <Spinner />
             Preparing your photo
           </div>
         )}
-        <button className="btn-primary btn" type="button">
+        <button className="btn-primary btn mb-4" type="button">
           Upload Image
         </button>
+        <p>Drag and Drop an Image.</p>
       </div>
-      {publicId !== null ? (
+      {publicId !== null && (
         <div>
           <two-up>
             <AdvancedImage
-              cldImg={imgNotProcessed}
+              cldImg={imgOriginal(publicId)}
               plugins={[
                 lazyload(),
                 responsive(),
@@ -100,7 +94,7 @@ const CloudinaryUploadWidget = () => {
               ]}
             />
             <AdvancedImage
-              cldImg={myImgProcessed}
+              cldImg={imgBackground(publicId)}
               plugins={[
                 lazyload(),
                 responsive(),
@@ -110,11 +104,15 @@ const CloudinaryUploadWidget = () => {
             />
           </two-up>
         </div>
-      ) : (
-        <p>Arrastra una imagen aquí o haz clic para seleccionarla.</p>
       )}
       {publicId && (
-        <a className="btn-info btn" download href={myImgProcessed.toURL()}>
+        <a
+          className="btn-secondary btn mt-4"
+          download
+          href={imgReadyToDownload(publicId)}
+          target="_blank"
+          rel="noreferrer"
+        >
           download
         </a>
       )}
@@ -122,4 +120,4 @@ const CloudinaryUploadWidget = () => {
   )
 }
 
-export default CloudinaryUploadWidget
+export default CloudinaryUpload

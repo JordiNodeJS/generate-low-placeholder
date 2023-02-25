@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 const SvgComponent = props => (
   <svg
     id="cld-main-logo"
