@@ -58,7 +58,7 @@ const CloudinaryUpload = () => {
 
   return (
     <div
-      className={`flex w-full flex-col items-center justify-center shadow-lg drop-shadow-lg shadow-pink-100 bg-pink-50 p-4 ${
+      className={`flex w-full flex-col items-center justify-center shadow-lg shadow-gray-200 bg-pink-50 p-4 ${
         isDragActive && 'bg-cyan-100'
       }`}
     >
