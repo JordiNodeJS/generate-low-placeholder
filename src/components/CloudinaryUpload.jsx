@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import 'two-up-element'
 import { useDropzone } from 'react-dropzone'
 import {
@@ -15,10 +15,19 @@ import {
   imgBackground,
   imgReadyToDownload
 } from '../utils/transformations'
+import { useMyContext } from '../store/context'
+import { Actions } from '../store/reducer'
 
 const CloudinaryUpload = () => {
+  const { state, dispatch } = useMyContext()
+  const { publicId } = state
+
+  useEffect(() => {
+    dispatch({ type: Actions.SET_PUBLIC_ID, payload: { publicId: null } })
+  }, [])
+
   const [isUploading, setIsUploading] = useState(false)
-  const [publicId, setPublicId] = useState(null)
+  // const [publicId, setPublicId] = useState(null)
   const [, setData] = useState(null)
 
   const handleDrop = async acceptedFiles => {
@@ -40,7 +49,10 @@ const CloudinaryUpload = () => {
       )
       const data = await response.json()
       setData(data)
-      setPublicId(data.public_id)
+      dispatch({
+        type: Actions.SET_PUBLIC_ID,
+        payload: { publicId: data.public_id }
+      })
       setIsUploading(false)
     } catch (error) {
       // eslint-disable-next-line no-console
@@ -56,9 +68,7 @@ const CloudinaryUpload = () => {
   })
 
   return (
-    <div
-      className='flex w-full flex-col items-center justify-center shadow-lg shadow-gray-200 bg-pink-50 p-4'
-    >
+    <div className="flex w-full flex-col items-center justify-center bg-pink-50 p-4 shadow-lg shadow-gray-200">
       <div
         {...getRootProps({
           className: `flex flex-col w-full items-center justify-center border-2 border-dashed border-violet-200 p-4 mb-4 ${
