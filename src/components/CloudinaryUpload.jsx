@@ -27,7 +27,6 @@ const CloudinaryUpload = () => {
     const formData = new FormData()
     formData.append('file', file)
     formData.append('upload_preset', import.meta.env.VITE_UPLOAD_PRESET)
-    // formData.append('api_key', import.meta.env.VITE_API_KEY)
     formData.append('timestamp', Date.now() / 1000)
     try {
       const response = await fetch(

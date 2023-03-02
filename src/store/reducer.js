@@ -1,16 +1,16 @@
 export const initialState = {}
 
-export const actionTypes = {
+export const Actions = {
   SET_VALUE: 'SET_VALUE',
   SET_IMAGE: 'SET_IMAGE'
 }
 
 export default function reducer(state, action) {
   switch (action.type) {
-    case actionTypes.SET_IMAGE:
+    case Actions.SET_IMAGE:
       return { ...state }
 
-    case actionTypes.SET_VALUE:
+    case Actions.SET_VALUE:
       return { ...state, ...action.payload }
 
     default:
