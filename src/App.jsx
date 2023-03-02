@@ -1,4 +1,4 @@
-import CloudinaryUploadWidget from './components/CloudinaryUploadWidget'
+import CloudinaryUpload from './components/CloudinaryUpload'
 import SvgComponent from './components/Cloudinary'
 // eslint-disable-next-line no-unused-vars
 import TestReducer from './components/TestReducer'
@@ -16,14 +16,11 @@ function App() {
       </header>
       <main>
         <section>
-          <h1 className="mb-5 text-center text-5xl font-bold">
-            Drag and Drop Test
-          </h1>
           {/* <DropzoneImage /> */}
-          <CloudinaryUploadWidget />
+          <CloudinaryUpload />
         </section>
       </main>
-      <footer className="flex items-center justify-center gap-x-2 font-semibold">
+      <footer className="flex items-center justify-center gap-x-2 font-semibold mt-4">
         Made with <SvgComponent className="w-24" />
       </footer>
     </div>
