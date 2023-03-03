@@ -21,26 +21,6 @@ const fetchImages = async () => {
   return data.resources
 }
 
-// const fetchImages = async () => {
-//   const response = await fetch(
-//     `https://api.cloudinary.com/v1_1/${
-//       cloudinary.getConfig().cloud.cloudName
-//     }/resources/image`,
-//     {
-//       headers: {
-//         Authorization: `Basic ${btoa(
-//           `${cloudinary.getConfig().cloud.apiKey}:${
-//             cloudinary.getConfig().cloud.apiSecret
-//           }`
-//         )}`,
-//         'Content-Type': 'application/json'
-//       }
-//     }
-//   )
-//   const data = await response.json()
-//   return data.resources
-// }
-
 const ImageGallery = () => {
   const [images, setImages] = useState([])
 
