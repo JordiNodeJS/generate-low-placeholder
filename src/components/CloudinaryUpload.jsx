@@ -17,6 +17,7 @@ import {
 } from '../utils/transformations'
 import { useMyContext } from '../store/context'
 import { Actions } from '../store/reducer'
+import TwoUp from './TwoUp'
 
 const CloudinaryUpload = () => {
   const { state, dispatch } = useMyContext()
@@ -95,30 +96,7 @@ const CloudinaryUpload = () => {
         </button>
         <p>Drag and Drop an Image.</p>
       </div>
-      {publicId !== null && (
-        <div>
-          <two-up>
-            <AdvancedImage
-              cldImg={imgOriginal(publicId)}
-              plugins={[
-                lazyload(),
-                responsive(),
-                accessibility(),
-                placeholder()
-              ]}
-            />
-            <AdvancedImage
-              cldImg={imgBackground(publicId)}
-              plugins={[
-                lazyload(),
-                responsive(),
-                accessibility(),
-                placeholder()
-              ]}
-            />
-          </two-up>
-        </div>
-      )}
+      <TwoUp />
       {publicId && (
         <a
           className="btn-secondary btn mt-4"
