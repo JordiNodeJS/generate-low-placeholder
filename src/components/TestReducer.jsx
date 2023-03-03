@@ -1,5 +1,5 @@
 import { useMyContext } from '../store/context'
-import { actionTypes } from '../store/reducer'
+import { Actions } from '../store/reducer'
 
 export default function TestReducer() {
   const { dispatch } = useMyContext()
@@ -11,7 +11,7 @@ export default function TestReducer() {
         type="button"
         onClick={() =>
           dispatch({
-            type: actionTypes.SET_VALUE,
+            type: Actions.SET_VALUE,
             payload: { myValue: 'Hola Mundo' }
           })
         }
