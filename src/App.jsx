@@ -1,17 +1,17 @@
 import CloudinaryUpload from './components/CloudinaryUpload'
 import SvgComponent from './components/Cloudinary'
 // eslint-disable-next-line no-unused-vars
-import TestReducer from './components/TestReducer'
 
 function App() {
   return (
-    <div className="m-auto grid h-screen w-full max-w-xl grid-cols-1 place-content-center">
+    <div className="m-auto grid h-screen w-full max-w-xl grid-cols-1">
       {/* <TestReducer /> */}
-      <header className="flex justify-center py-10">
-        <h1 className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-4xl font-extrabold tracking-tighter text-transparent">
+      <header className="flex justify-center py-10" title='Generate low quality image placeholders'>
+        <h1 className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-center text-4xl font-extrabold tracking-tighter text-transparent">
           Generate
-          <span className="text-2xl font-extrabold text-purple-300">low</span>
-          <span className="">placeholder</span>
+          <span className="text-2xl font-extrabold text-purple-300">low quality</span>
+          <span className="">image</span> <br />
+          placeholders
         </h1>
       </header>
       <main>
@@ -20,8 +20,11 @@ function App() {
           <CloudinaryUpload />
         </section>
       </main>
-      <footer className="flex items-center justify-center gap-x-2 font-semibold mt-4">
-        Made with <SvgComponent className="w-24" />
+      <footer className="mt-4 flex items-center justify-center gap-x-2 font-semibold">
+        Made with <SvgComponent className="w-24" /> by <span className='text-purple-700'>peTroNiNi</span> with much love{' '}
+        <span className="material-symbols-rounded text-secondary hover:animate-ping">
+          heart_plus
+        </span>
       </footer>
     </div>
   )
