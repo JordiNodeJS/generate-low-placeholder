@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import 'two-up-element'
 import { useDropzone } from 'react-dropzone'
 import {
@@ -30,8 +30,6 @@ const CloudinaryUpload = () => {
     })
   }, [])
 
-  const [, setData] = useState(null)
-
   const handleDrop = async acceptedFiles => {
     dispatch({ type: Actions.SET_IS_UPLOADING, payload: { isUpLoading: true } })
     const file = acceptedFiles[0]
@@ -50,7 +48,11 @@ const CloudinaryUpload = () => {
         }
       )
       const data = await response.json()
-      setData(data)
+      dispatch({
+        type: Actions.SET_CLOUDINARY_IMG,
+        payload: { cldImage: data }
+      })
+
       dispatch({
         type: Actions.SET_PUBLIC_ID,
         payload: { publicId: data.public_id }
