@@ -26,7 +26,7 @@ export const imgBackground = publicId =>
 export const imgReadyToDownload = publicId =>
   cld
     .image(publicId)
+    .resize(fill().width(widthPixles))
     .adjust(replaceColor('violet').fromColor('#2b38aa').tolerance(80))
     .effect(vectorize().numOfColors(4).detailsLevel(0.25))
-    .resize(fill().width(widthPixles))
     .toURL()
