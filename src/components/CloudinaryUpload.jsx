@@ -2,9 +2,7 @@ import { useEffect } from 'react'
 import 'two-up-element'
 import { useDropzone } from 'react-dropzone'
 import Spinner from './Spinner'
-import {
-  imgReadyToDownload
-} from '../utils/transformations'
+import { imgReadyToDownload } from '../utils/transformations'
 import { useMyContext } from '../store/context'
 import { Actions } from '../store/reducer'
 import TwoUp from './TwoUp'
@@ -45,10 +43,16 @@ const CloudinaryUpload = () => {
             Preparing your photo
           </div>
         )}
-        <button className="btn-primary btn mb-4" type="button">
-          Upload Image
+        <button className="btn-primary btn mb-4 transition-transform hover:scale-105" type="button">
+          <span className="material-symbols-rounded mr-2">upload</span> Upload
+          Image
         </button>
-        <p>Drag and Drop an Image.</p>
+        <p>
+          <span className="material-symbols-rounded text-primary transition-transform hover:scale-105">
+            photo_library
+          </span>
+        </p>
+        <p className="text-primary">Drag and Drop an Image. </p>
       </div>
       <TwoUp />
       {publicId && (
@@ -59,6 +63,9 @@ const CloudinaryUpload = () => {
           target="_blank"
           rel="noreferrer"
         >
+          <span className="material-symbols-rounded mr-2 animate-bounce">
+            download
+          </span>{' '}
           download
         </a>
       )}
