@@ -43,7 +43,10 @@ const CloudinaryUpload = () => {
             Preparing your photo
           </div>
         )}
-        <button className="btn-primary btn mb-4 transition-transform hover:scale-105" type="button">
+        <button
+          className="btn-primary btn mb-4 transition-transform hover:scale-105"
+          type="button"
+        >
           <span className="material-symbols-rounded mr-2">upload</span> Upload
           Image
         </button>
@@ -57,7 +60,7 @@ const CloudinaryUpload = () => {
       <TwoUp />
       {publicId && (
         <a
-          className="btn-secondary btn mt-4"
+          className="btn-secondary btn mt-4 transition-transform hover:scale-105"
           download
           href={imgReadyToDownload(publicId)}
           target="_blank"
@@ -65,7 +68,7 @@ const CloudinaryUpload = () => {
         >
           <span className="material-symbols-rounded mr-2 animate-bounce">
             download
-          </span>{' '}
+          </span>
           download
         </a>
       )}
