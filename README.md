@@ -20,35 +20,6 @@ La idea original de la app la promovió [Migue Angel Durán](https://www.youtube
 
 
 
-### Packages
-dependencies:
-+ @cloudinary/react 1.11.0
-+ @cloudinary/url-gen 1.9.1
-+ @paralleldrive/cuid2 2.2.0
-+ daisyui 2.51.3
-+ react 18.2.0
-+ react-dom 18.2.0
-+ react-dropzone 14.2.3
-
-devDependencies:
-+ @types/react 18.0.28
-+ @types/react-dom 18.0.11
-+ @vitejs/plugin-react-swc 3.2.0
-+ autoprefixer 10.4.13
-+ eslint 8.35.0
-+ eslint-config-prettier 8.6.0
-+ eslint-config-standard 17.0.0
-+ eslint-plugin-import 2.27.5
-+ eslint-plugin-n 15.6.1
-+ eslint-plugin-promise 6.1.1
-+ eslint-plugin-react 7.32.2
-+ postcss 8.4.21
-+ prettier 2.8.4
-+ prettier-plugin-tailwindcss 0.2.4
-+ tailwindcss 3.2.7
-+ two-up-element 1.0.1
-+ vite 4.1.4
-
 # [CloudCreate Hackathon Submission](https://forms.monday.com/forms/bc9e0eefc52aca8b49b1fcae951eb910?r=use1)
 
 ### CÓMO PARTICIPAR
