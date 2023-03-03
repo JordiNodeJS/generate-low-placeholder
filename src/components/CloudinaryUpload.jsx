@@ -20,18 +20,20 @@ import { Actions } from '../store/reducer'
 
 const CloudinaryUpload = () => {
   const { state, dispatch } = useMyContext()
-  const { publicId } = state
+  const { publicId, isUpLoading } = state
 
   useEffect(() => {
     dispatch({ type: Actions.SET_PUBLIC_ID, payload: { publicId: null } })
+    dispatch({
+      type: Actions.SET_IS_UPLOADING,
+      payload: { isUpLoading: false }
+    })
   }, [])
 
-  const [isUploading, setIsUploading] = useState(false)
-  // const [publicId, setPublicId] = useState(null)
   const [, setData] = useState(null)
 
   const handleDrop = async acceptedFiles => {
-    setIsUploading(true)
+    dispatch({ type: Actions.SET_IS_UPLOADING, payload: { isUpLoading: true } })
     const file = acceptedFiles[0]
     const formData = new FormData()
     formData.append('file', file)
@@ -53,7 +55,10 @@ const CloudinaryUpload = () => {
         type: Actions.SET_PUBLIC_ID,
         payload: { publicId: data.public_id }
       })
-      setIsUploading(false)
+      dispatch({
+        type: Actions.SET_IS_UPLOADING,
+        payload: { isUpLoading: false }
+      })
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error)
@@ -77,7 +82,7 @@ const CloudinaryUpload = () => {
         })}
       >
         <input {...getInputProps()} />
-        {isUploading && (
+        {isUpLoading && (
           <div className="mb-3 flex items-center">
             <Spinner />
             Preparing your photo
