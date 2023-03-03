@@ -3,7 +3,6 @@ import 'two-up-element'
 import { useDropzone } from 'react-dropzone'
 import Spinner from './Spinner'
 import {
-
   imgReadyToDownload
 } from '../utils/transformations'
 import { useMyContext } from '../store/context'
