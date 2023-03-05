@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const DarkModeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
     // Actualizar el tema al cambiar la variable `isDarkMode`
