@@ -1,0 +1,57 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#386e34",
+        "activityBar.activeBorder": "#616add",
+        "activityBar.background": "#5114a1",
+        "activityBar.foreground": "#afc4da",
+        "activityBar.inactiveForeground": "#c5d0db99",
+        "activityBarBadge.background": "#eb2f0e",
+        "activityBarBadge.foreground": "#e0c3c3",
+        "statusBar.background": "#093577",
+        "statusBar.foreground": "#7dbaf7",
+        "statusBarItem.hoverBackground": "#2ca223",
+        "titleBar.hoverBackground": "#37cc2c99",
+        "titleBar.activeBackground": "#7414a1",
+        "titleBar.activeForeground": "#d8b8b8",
+        "titleBar.inactiveBackground": "#22152e",
+        "titleBar.inactiveForeground": "#c9d6e399",
+    },
+    "files.autoSave": "onFocusChange",
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {
+        "markdown": "html",
+        "javascript": "javascriptreact",
+        "typescript": "typescriptreact"
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "files.exclude": {
+        "**/*.js.map": {
+            "when": "$(basename)"
+        },
+        "**/node_modules": true,
+    },
+    "html.autoClosingTags": true,
+    "javascript.autoClosingTags": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    //   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    //   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    //   "javascript.inlayHints.parameterNames.enabled": "all",
+    //   "typescript.inlayHints.parameterNames.enabled": "all",
+    "javascript.suggest.autoImports": true,
+    "search.exclude": {
+        "**/coverage": true,
+        "**/node_modules": true
+    },
+    "typescript.autoClosingTags": true,
+    "typescript.suggest.autoImports": true,
+    // "prettier.semi": false,
+    // "prettier.trailingComma": "none",
+    // "prettier.useEditorConfig": false,
+    // "prettier.arrowParens": "avoid",
+    // "prettier.jsxSingleQuote": false,
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+}

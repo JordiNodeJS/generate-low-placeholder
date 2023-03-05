@@ -28,7 +28,7 @@ const CloudinaryUpload = () => {
   })
 
   return (
-    <div className="flex w-full flex-col items-center justify-center bg-pink-50 p-4 shadow-lg shadow-gray-200">
+    <div className="flex w-full flex-col items-center justify-center light:bg-pink-50 p-4 shadow-lg light:shadow-gray-200">
       <div
         {...getRootProps({
           className: `flex flex-col w-full items-center justify-center border-2 border-dashed border-violet-200 p-4 mb-4 ${

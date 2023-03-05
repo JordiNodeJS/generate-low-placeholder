@@ -4,7 +4,7 @@
     "name": "peTroNiNi",
     "email": "jordinodejs@gmail.com"
   },
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
