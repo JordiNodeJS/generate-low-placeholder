@@ -6,7 +6,7 @@ module.exports = {
     extend: {}
   },
   daisyui: {
-    themes: [
+    themes: ['dark',
       {
         midutheme: {
           primary: '#7e22ce',
