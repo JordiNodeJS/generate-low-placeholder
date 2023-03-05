@@ -1,6 +1,6 @@
 # Generador de placeholder de baja resolución para imágenes
 
-## [Live Demo]()
+## [Live Demo](https://generate-low-placeholder.netlify.app/)
 
 Este proyecto se ha creado con la finalidad de participar en la **midu hackatón** organizado por [@midudev](https://midu.dev/) y apoyado por [Cloudinary](https://cloudinary.com/)
 
