@@ -3,7 +3,7 @@ import Moon from './icons/Moon'
 import Sun from './icons/Sun'
 
 const DarkModeToggle = () => {
-  const inicialState = localStorage.getItem('isDarkMode') ? 'true' : 'false'
+  const inicialState = localStorage.getItem('isDarkMode') === 'true'
   const [isDarkMode, setIsDarkMode] = useState(inicialState)
 
   useEffect(() => {
