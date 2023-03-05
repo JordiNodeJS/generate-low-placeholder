@@ -1,4 +1,4 @@
-const SvgComponent = props => (
+const SvgCloudinary = props => (
   <svg
     id="cld-main-logo"
 
@@ -25,4 +25,4 @@ const SvgComponent = props => (
   </svg>
 )
 
-export default SvgComponent
+export default SvgCloudinary
