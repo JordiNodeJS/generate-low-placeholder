@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import 'two-up-element'
 import { useDropzone } from 'react-dropzone'
-import Spinner from './Spinner'
+import Spinner from './icons/Spinner'
 import { imgReadyToDownload } from '../utils/transformations'
 import { useMyContext } from '../store/context'
 import { Actions } from '../store/reducer'
