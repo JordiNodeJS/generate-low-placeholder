@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import 'two-up-element'
 import { useDropzone } from 'react-dropzone'
 import Spinner from './icons/Spinner'
@@ -24,11 +24,14 @@ const CloudinaryUpload = () => {
     noClick: false,
     maxFiles: 1,
     accept: { 'image/*': [] },
-    onDrop: acceptedFiles => handleDrop(acceptedFiles, dispatch)
+    onDrop: useCallback(
+      acceptedFiles => handleDrop(acceptedFiles, dispatch),
+      [dispatch]
+    )
   })
 
   return (
-    <div className="flex w-full flex-col items-center justify-center light:bg-pink-50 p-4 shadow-lg light:shadow-gray-200">
+    <div className="light:bg-pink-50 light:shadow-gray-200 flex w-full flex-col items-center justify-center p-4 shadow-lg">
       <div
         {...getRootProps({
           className: `flex flex-col w-full items-center justify-center border-2 border-dashed border-violet-200 p-4 mb-4 ${
