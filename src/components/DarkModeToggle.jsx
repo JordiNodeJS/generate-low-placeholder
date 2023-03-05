@@ -3,7 +3,8 @@ import Moon from './icons/Moon'
 import Sun from './icons/Sun'
 
 const DarkModeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const inicialState = localStorage.getItem('isDarkMode') ? 'true' : 'false'
+  const [isDarkMode, setIsDarkMode] = useState(inicialState)
 
   useEffect(() => {
     // Actualizar el tema al cambiar la variable `isDarkMode`
@@ -11,6 +12,7 @@ const DarkModeToggle = () => {
       'data-theme',
       isDarkMode ? 'dark' : 'midutheme'
     )
+    localStorage.setItem('isDarkMode', isDarkMode)
   }, [isDarkMode])
 
   const toggleDarkMode = () => {
