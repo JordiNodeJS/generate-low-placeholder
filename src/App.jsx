@@ -1,10 +1,12 @@
 import CloudinaryUpload from './components/CloudinaryUpload'
 import SvgComponent from './components/Cloudinary'
+import DarkModeToggle from './components/DarkModeToggle'
 // eslint-disable-next-line no-unused-vars
 
 function App() {
   return (
     <div className="m-auto grid h-screen w-full max-w-xl grid-cols-1">
+      <DarkModeToggle />
       {/* <TestReducer /> */}
       <header className="flex justify-center py-10" title='Generate low quality image placeholders'>
         <h1 className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-center text-4xl font-extrabold tracking-tighter text-transparent">
