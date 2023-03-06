@@ -9,7 +9,7 @@ function App() {
       <DarkModeToggle />
       <Header />
       <Main />
-     <Footer />
+      <Footer />
     </div>
   )
 }

@@ -1,3 +1,4 @@
+import Github from './icons/Github'
 import SvgCloudinary from './icons/SvgCloudinary'
 
 export default function Footer() {
@@ -7,7 +8,9 @@ export default function Footer() {
       <span className="text-purple-700">peTroNiNi</span> with much love{' '}
       <span className="material-symbols-rounded text-secondary hover:animate-ping">
         heart_plus
-      </span>
+      </span> in
+      <Github href="https://github.com/JordiNodeJS/generate-low-placeholder" />
+
     </footer>
   )
 }
